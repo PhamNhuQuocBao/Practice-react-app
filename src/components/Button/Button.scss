@@ -1,0 +1,29 @@
+.btn {
+  padding: 13px 30px;
+  border: none;
+}
+
+.btn:hover {
+    border-color: none !important;
+}
+
+.btn-primary {
+  background-color: #7fc008;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: #db303f;
+  color: #ffffff;
+}
+
+.btn-default {
+  background-color: transparent;
+  color: #000;
+  border: #d0d5dd 2px solid;
+}
+
+.btn-text {
+    background-color: transparent;
+    color: #000;
+}
