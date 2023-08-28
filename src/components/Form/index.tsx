@@ -5,7 +5,7 @@ import Select from "../Select";
 import { OPTIONS_STATUS, OPTIONS_TYPES } from "../../constants/options";
 import Button from "../Button";
 // import { UploadCloud } from "../../assets/icons";
-// import UploadImageSolid from "../../assets/icons/UploadImageSolid.svg";
+import UploadImageSolid from "../../assets/icons/UploadImageSolid.svg";
 // import Close from "../../assets/icons/Close.svg";
 import UploadCloud from "../../assets/icons/UploadCloud";
 import UploadImageDefault from "../../assets/icons/UploadImageDefault.svg";
@@ -24,11 +24,23 @@ const Form: React.FC<FormProps> = () => {
         }}
       >
         <FormItem classNameError="error-message">
-          <img src={UploadImageDefault} alt="" />
-          <Button type="default">
-            <label htmlFor="product-image">Click to upload</label>
-            <Input type="file" id="product-image" name="product-image" />
-          </Button>
+          <div className="cols--4">
+            <div className="img__upload img--medium">
+              <img
+                src={UploadImageDefault}
+                alt="icons upload"
+                className="img"
+              />
+            </div>
+            <Button
+              type="default"
+              icon={<UploadCloud />}
+              className="btn__upload-large"
+            >
+              <label htmlFor="product-image">Click to upload</label>
+              <Input type="file" id="product-image" name="product-image" />
+            </Button>
+          </div>
         </FormItem>
         <FormItem classNameError="error-message" label="Name">
           <Input
@@ -44,7 +56,7 @@ const Form: React.FC<FormProps> = () => {
         <FormItem classNameError="error-message" label="Price">
           <Input type="number" id="price" name="price" placeholder="0" />
         </FormItem>
-        <div className="cols">
+        <div className="cols--2">
           <FormItem classNameError="error-message" label="Status">
             <Select id="status" name="status" options={OPTIONS_STATUS} />
           </FormItem>
@@ -52,7 +64,7 @@ const Form: React.FC<FormProps> = () => {
             <Select id="types" name="types" options={OPTIONS_TYPES} />
           </FormItem>
         </div>
-        <div className="cols">
+        <div className="cols--2">
           <FormItem classNameError="error-message" label="Brand">
             <Input
               type="text"
@@ -62,10 +74,22 @@ const Form: React.FC<FormProps> = () => {
             />
           </FormItem>
           <FormItem classNameError="error-message" label="Brand Image">
-            <img src="../../assets/icons/UploadImageSolid.svg" alt="" />
-            <Button type="default" icon={<UploadCloud />}>
-              Upload photo
-            </Button>
+            <div className="cols--4">
+              <div className="img__upload img--small">
+                <img
+                  src={UploadImageSolid}
+                  alt="icons upload"
+                  className="img"
+                />
+              </div>
+              <Button
+                type="default"
+                icon={<UploadCloud />}
+                className="btn__upload-small"
+              >
+                Upload photo
+              </Button>
+            </div>
           </FormItem>
         </div>
       </form>
